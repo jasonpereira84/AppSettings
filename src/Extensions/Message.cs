@@ -6,7 +6,6 @@ using System.Collections.Generic;
 
 namespace JasonPereira84.AppSettings
 {
-    using Internal;
     using SMTP;
 
     public static partial class Extensions
