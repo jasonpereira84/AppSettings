@@ -2,7 +2,7 @@
 
 namespace JasonPereira84.AppSettings
 {
-    public class _SecurityToken
+    public class SecurityToken
     {
         public String Issuer { get; set; } = default(String);
 
