@@ -4,7 +4,6 @@ using System.Text;
 
 namespace JasonPereira84.AppSettings
 {
-    using Internal;
     using Database;
 
     public static partial class Extensions
