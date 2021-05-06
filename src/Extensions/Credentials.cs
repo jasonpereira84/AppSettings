@@ -4,8 +4,6 @@ using System.Text;
 
 namespace JasonPereira84.AppSettings
 {
-    using Internal;
-
     public static partial class Extensions
     {
         public static String HasId(this Credentials credentials, Func<String, String> funcIfTrue, Func<String, String> funcIfFalse, Boolean dontTrim = false)
