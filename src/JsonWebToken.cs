@@ -2,7 +2,7 @@
 
 namespace JasonPereira84.AppSettings
 {
-    public class JsonWebToken<TSigningCredentials> : _SecurityToken
+    public class JsonWebToken<TSigningCredentials> : SecurityToken
     {
         public TSigningCredentials SigningCredentials { get; set; } = default(TSigningCredentials);
     }
@@ -11,7 +11,7 @@ namespace JasonPereira84.AppSettings
     {
         public class SigningCredentials
         {
-            public class RSA<TKey> : _SigningCredentials<TKey>
+            public class RSA<TKey> : SigningCredentials<TKey>
                 where TKey : JasonPereira84.AppSettings.RSA._Key
             { }
 

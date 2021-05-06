@@ -2,7 +2,7 @@
 
 namespace JasonPereira84.AppSettings
 {
-    public abstract class _SigningCredentials<T>
+    public class SigningCredentials<T>
     {
         public String Algorithm { get; set; } = default(String);
 
