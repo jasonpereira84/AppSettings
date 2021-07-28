@@ -19,7 +19,7 @@
     <Title>JasonPereira84's applicationSettings library</Title>
     <PackageDescription>POCOs for objects in app.config and web.config</PackageDescription>
     <PackageTags>C#, Library, Utils, App, Application, Settings, POCO, JSON</PackageTags>
-    <RepositoryUrl>https://github.com/jasonpereira84/Helpers.Misc</RepositoryUrl>
+    <RepositoryUrl>https://github.com/jasonpereira84/AppSettings</RepositoryUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Authors>jasonpereira84@gmail.com</Authors>
