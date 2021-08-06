@@ -14,6 +14,8 @@ namespace JasonPereira84.AppSettings
             public String Provider { get; set; } = default(String);
 
             public Server Server { get; set; } = default(Server);
+
+            public String TableName { get; set; } = default(String);
         }
     }
 }
