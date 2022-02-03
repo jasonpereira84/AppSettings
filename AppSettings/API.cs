@@ -4,10 +4,10 @@ namespace JasonPereira84.AppSettings
 {
     public class API
     {
-        public String Url { get; set; } = default(String);
+        public String Url { get; set; }
 
-        public String Key { get; set; } = default(String);
+        public String Key { get; set; }
 
-        public Credentials Credentials { get; set; } = default(Credentials);
+        public Credentials Credentials { get; set; }
     }
 }
