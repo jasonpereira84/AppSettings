@@ -4,8 +4,8 @@ namespace JasonPereira84.AppSettings
 {
     public class Endpoint
     {
-        public String Host { get; set; } = default(String);
+        public String Host { get; set; }
 
-        public UInt16? Port { get; set; } = default(UInt16?);
+        public Nullable<UInt16> Port { get; set; }
     }
 }

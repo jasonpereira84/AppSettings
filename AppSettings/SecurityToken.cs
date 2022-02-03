@@ -4,10 +4,10 @@ namespace JasonPereira84.AppSettings
 {
     public class SecurityToken
     {
-        public String Issuer { get; set; } = default(String);
+        public String Issuer { get; set; }
 
-        public String Audience { get; set; } = default(String);
+        public String Audience { get; set; }
 
-        public Timespan ExpiresIn { get; set; } = default(Timespan);
+        public Timespan ExpiresIn { get; set; }
     }
 }

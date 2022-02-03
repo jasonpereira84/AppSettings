@@ -4,10 +4,10 @@ namespace JasonPereira84.AppSettings
 {
     public class SigningCredentials<T>
     {
-        public String Algorithm { get; set; } = default(String);
+        public String Algorithm { get; set; }
 
-        public String Digest { get; set; } = default(String);
+        public String Digest { get; set; }
 
-        public T Key { get; set; } = default(T);
+        public T Key { get; set; }
     }
 }

@@ -2,15 +2,15 @@
 
 namespace JasonPereira84.AppSettings
 {
-    namespace SOAP
+    public partial class SOAP
     {
         public class ServiceHeader
         {
-            public Byte[] Seed { get; set; } = default(Byte[]);
+            public Byte[] Seed { get; set; }
 
-            public String EncryptedText { get; set; } = default(String);
+            public String EncryptedText { get; set; }
 
-            public RSA.PublicKey RSAPublicKey { get; set; } = default(RSA.PublicKey);
+            public RSA.PublicKey RSAPublicKey { get; set; }
         }
     }
 }
