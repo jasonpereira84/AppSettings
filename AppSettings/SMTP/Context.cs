@@ -2,13 +2,13 @@
 
 namespace JasonPereira84.AppSettings
 {
-    namespace SMTP
+    public partial class SMTP
     {
         public class Context
         {
-            public Server Server { get; set; } = default(Server);
+            public Server Server { get; set; }
 
-            public Message Message { get; set; } = default(Message);
+            public Message Message { get; set; }
         }
     }
 }

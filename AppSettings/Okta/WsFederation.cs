@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace JasonPereira84.AppSettings
 {
@@ -7,11 +6,11 @@ namespace JasonPereira84.AppSettings
     {
         public class WsFederation
         {
-            public String Id { get; set; } = default(String);
+            public String Id { get; set; }
 
-            public String Host { get; set; } = default(String);
+            public String Host { get; set; }
 
-            public String Origin { get; set; } = default(String);
+            public String Origin { get; set; }
         }
     }
 }

@@ -1,22 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace JasonPereira84.AppSettings
 {
-    namespace SMTP
+    public partial class SMTP
     {
         public class Message
         {
-            public String Priority { get; set; } = default(String);
+            public String Priority { get; set; }
 
-            public String Subject { get; set; } = default(String);
+            public String Subject { get; set; }
 
-            public Address From { get; set; } = default(Address);
+            public Address From { get; set; }
 
-            public Address[] To { get; set; } = default(Address[]);
+            public IEnumerable<Address> To { get; set; }
 
-            public Address[] CC { get; set; } = default(Address[]);
+            public IEnumerable<Address> CC { get; set; }
 
-            public Address[] Bcc { get; set; } = default(Address[]);
+            public IEnumerable<Address> Bcc { get; set; }
         }
     }
 }

@@ -4,8 +4,8 @@ namespace JasonPereira84.AppSettings
 {
     public class Server
     {
-        public Endpoint Endpoint { get; set; } = default(Endpoint);
+        public Endpoint Endpoint { get; set; }
 
-        public Credentials Credentials { get; set; } = default(Credentials);
+        public Credentials Credentials { get; set; }
     }
 }

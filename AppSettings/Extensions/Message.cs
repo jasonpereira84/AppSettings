@@ -1,31 +1,37 @@
 ﻿using System;
-using System.Linq;
 using System.Net.Mail;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace JasonPereira84.AppSettings
 {
-    using SMTP;
-
     public static partial class Extensions
     {
-        public static MailMessage AsMailMessage(this Message message,
-            Boolean dontSanitizeDisplayNameFROM = false, Boolean dontSanitizeSubject = false, MailPriority defaultMailPriority = default(MailPriority),
+        public static MailMessage AsMailMessage(this SMTP.Message message,
+            MailPriority defaultMailPriority = default(MailPriority), Boolean dontSanitizeSubject = false,
+            Boolean dontSanitizeDisplayNameFROM = false,
             Boolean dontSanitizeDisplayNameTO = false, Boolean dontSanitizeDisplayNameCC = false, Boolean dontSanitizeDisplayNameBCC = false)
         {
-            var from = message.From.AsMailAddress(dontSanitizeDisplayNameFROM);
-            var subj = dontSanitizeSubject ? message.Subject : message.Subject.SanitizeTo("No Subject");
-            var prty = Enum.TryParse(message.Priority, true, out MailPriority parsedMailPriority) ? parsedMailPriority : defaultMailPriority;
+            var retVal = new MailMessage
+            {
+                Priority = Enum.TryParse(message.Priority, true, out MailPriority parsedMailPriority) ? parsedMailPriority : defaultMailPriority,
+                Subject = dontSanitizeSubject || !String.IsNullOrWhiteSpace(message.Subject) ? message.Subject : "No Subject"
+            };
+            {
+                if (message.From != null)
+                    retVal.From = message.From.AsMailAddress(dontSanitizeDisplayNameFROM);
 
-            void _addAddresses(IEnumerable<Address> addresses, Boolean dontSanitizeDisplayName, MailAddressCollection mailAddressCollection)
-                => addresses?.Select(addr => mailAddressCollection.AddAddress(addr));
-
-            var mailMessage = new MailMessage { From = from, Subject = subj, Priority = prty };
-            _addAddresses(message.To, dontSanitizeDisplayNameTO, mailMessage.To);
-            _addAddresses(message.CC, dontSanitizeDisplayNameCC, mailMessage.CC);
-            _addAddresses(message.Bcc, dontSanitizeDisplayNameBCC, mailMessage.Bcc);
-            return mailMessage;
+                void _addAddresses(IEnumerable<SMTP.Address> addresses, Boolean dontSanitizeDisplayName, MailAddressCollection mailAddressCollection)
+                {
+                    if (addresses != null)
+                        foreach (var address in addresses)
+                            if (address != null)
+                                mailAddressCollection.Add(address.AsMailAddress(dontSanitizeDisplayName));
+                }
+                _addAddresses(message.To, dontSanitizeDisplayNameTO, retVal.To);
+                _addAddresses(message.CC, dontSanitizeDisplayNameCC, retVal.CC);
+                _addAddresses(message.Bcc, dontSanitizeDisplayNameBCC, retVal.Bcc);
+            }
+            return retVal;
         }
 
     }
