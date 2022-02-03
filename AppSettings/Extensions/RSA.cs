@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Xml;
-using System.Linq;
 using System.Xml.Serialization;
 using System.Security.Cryptography;
 
@@ -23,33 +22,37 @@ namespace JasonPereira84.AppSettings
             where TKey : RSA._Key
             => AsXmlString(key, new XmlSerializer(key.GetType(), new XmlRootAttribute("RSAKeyValue")));
 
-        public static RSAParameters AsParameters<TKey>(this TKey key, Boolean onlyPublic = default)
+        public static RSA.PublicKey PublicKey(this RSA.PrivateKey key)
+            => new RSA.PublicKey
+            {
+                Modulus = key.Modulus,
+                Exponent = key.Exponent
+            };
+
+        public static RSAParameters AddPrivateParameters(this RSAParameters rsaParameters, RSA.PrivateKey key)
+        {
+            rsaParameters.P = Convert.FromBase64String(key.P);
+            rsaParameters.Q = Convert.FromBase64String(key.Q);
+            rsaParameters.DP = Convert.FromBase64String(key.DP);
+            rsaParameters.DQ = Convert.FromBase64String(key.DQ);
+            rsaParameters.InverseQ = Convert.FromBase64String(key.InverseQ);
+            rsaParameters.D = Convert.FromBase64String(key.D);
+            return rsaParameters;
+        }
+
+        public static RSAParameters AsRSAParameters<TKey>(this TKey key)
             where TKey : RSA._Key
         {
-            RSAParameters _public(RSA.PublicKey k)
-                => new RSAParameters
-                {
-                    Modulus = Convert.FromBase64String(k.Modulus),
-                    Exponent = Convert.FromBase64String(k.Exponent)
-                };
-
-            RSAParameters _private(RSA.PrivateKey k)
-                => new RSAParameters
-                {
-                    Modulus = Convert.FromBase64String(k.Modulus),
-                    Exponent = Convert.FromBase64String(k.Exponent),
-                    InverseQ = Convert.FromBase64String(k.InverseQ),
-                    DQ = Convert.FromBase64String(k.DQ),
-                    DP = Convert.FromBase64String(k.DP),
-                    D = Convert.FromBase64String(k.D),
-                    Q = Convert.FromBase64String(k.Q),
-                    P = Convert.FromBase64String(k.P)
-                };
-
-            return onlyPublic || key is RSA.PublicKey
-                ? _public(key as RSA.PublicKey)
-                : _private(key as RSA.PrivateKey);
+            var retVal = new RSAParameters
+            {
+                Modulus = Convert.FromBase64String(key.Modulus),
+                Exponent = Convert.FromBase64String(key.Exponent)
+            };
+            return key is RSA.PrivateKey 
+                ? retVal.AddPrivateParameters(key as RSA.PrivateKey) 
+                : retVal;
         }
+
     }
 }
 
