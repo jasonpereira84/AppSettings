@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30225.117
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppSettings", "AppSettings\AppSettings.csproj", "{61707073-6574-7469-6E67-730000737263}"
 EndProject
@@ -14,12 +14,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{56E7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{C20F231B-5DEE-4EDD-891A-2DF3BC4DD259}"
 	ProjectSection(SolutionItems) = preProject
-		.github\workflows\develop.yml = .github\workflows\develop.yml
-		.github\workflows\master.yml = .github\workflows\master.yml
-		.github\workflows\release.yml = .github\workflows\release.yml
+		.github\workflows\build_and_publish.yml = .github\workflows\build_and_publish.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSettings.Tests", "AppSettings.Tests\AppSettings.Tests.csproj", "{8A8C824B-C180-402B-ABF5-BEA930818B63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppSettings.Tests", "AppSettings.Tests\AppSettings.Tests.csproj", "{8A8C824B-C180-402B-ABF5-BEA930818B63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
