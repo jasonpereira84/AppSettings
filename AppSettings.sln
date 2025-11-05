@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{56E7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{C20F231B-5DEE-4EDD-891A-2DF3BC4DD259}"
 	ProjectSection(SolutionItems) = preProject
-		.github\workflows\build_and_publish.yml = .github\workflows\build_and_publish.yml
+		.github\workflows\build_test_and_publish.yml = .github\workflows\build_test_and_publish.yml
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppSettings.Tests", "AppSettings.Tests\AppSettings.Tests.csproj", "{8A8C824B-C180-402B-ABF5-BEA930818B63}"
