@@ -2,7 +2,7 @@
 
 namespace JasonPereira84.AppSettings
 {
-    public partial class AWS
+    public class AWS
     {
         public class ElasticBeanstalk
         {

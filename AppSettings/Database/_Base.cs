@@ -2,7 +2,18 @@
 
 namespace JasonPereira84.AppSettings
 {
-    public class Database
+    public interface IDatabase
+    {
+        String Name { get; set; }
+
+        String Schema { get; set; }
+
+        String Provider { get; set; }
+
+        Server Server { get; set; }
+    }
+
+    public partial class Database : IDatabase
     {
         public String Name { get; set; }
 
