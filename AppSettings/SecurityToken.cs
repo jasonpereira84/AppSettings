@@ -9,5 +9,7 @@ namespace JasonPereira84.AppSettings
         public String Audience { get; set; }
 
         public Timespan ExpiresIn { get; set; }
+
+        public String AuthenticationScheme { get; set; }
     }
 }
