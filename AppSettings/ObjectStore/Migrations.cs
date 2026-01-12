@@ -17,7 +17,7 @@ namespace JasonPereira84.AppSettings
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
             public String Path { get; set; }
-            public IObjectStore ObjectStore { get; set; }
+            public ObjectStore ObjectStore { get; set; }
             public String JournalObjectName { get; set; }
             public Dictionary<String, Pair> Variables { get; set; }
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
