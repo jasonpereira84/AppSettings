@@ -6,36 +6,9 @@ namespace JasonPereira84.AppSettings
     {
         public String Issuer { get; set; }
 
-        protected String _audience;
-        public String Audience
-        {
-            set { _audience = value; }
-            get
-            {
-                if (!String.IsNullOrWhiteSpace(_audience))
-                    return _audience;
+        public String Audience { get; set; }
 
-                if (_audiences == null || _audiences.Length == 0)
-                    return null;
-
-                return _audiences[0];
-            }
-        }
-
-        protected String[] _audiences;
-        public String[] Audiences
-        {
-            set {  _audiences = value; }
-            get 
-            {
-                if (_audiences != null || _audiences.Length > 0)
-                    return _audiences;
-
-                return String.IsNullOrWhiteSpace(_audience)
-                    ? new String[0]
-                    : new String[] { _audience };
-            }
-        }
+        public String[] Audiences { get; set; }
 
         public Timespan ExpiresIn { get; set; }
 
