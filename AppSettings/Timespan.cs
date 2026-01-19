@@ -13,5 +13,7 @@ namespace JasonPereira84.AppSettings
         public Int32 Seconds { get; set; }
 
         public Int32 Milliseconds { get; set; }
+
+        public Int32 Microseconds { get; set; }
     }
 }
