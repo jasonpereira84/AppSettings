@@ -5,8 +5,8 @@
     <Product>JasonPereira84.AppSettings</Product>
     <Copyright>Copyright © 2025</Copyright>
     <NeutralLanguage>en</NeutralLanguage>
-    <AssemblyVersion>8.0.5.0</AssemblyVersion>
-    <InformationalVersion>8.0.5.0</InformationalVersion>
+    <AssemblyVersion>8.0.6.0</AssemblyVersion>
+    <InformationalVersion>8.0.6.0</InformationalVersion>
   </PropertyGroup>
 
 </Project>
