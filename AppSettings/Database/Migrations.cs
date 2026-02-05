@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace JasonPereira84.AppSettings
 {
-    public partial class ObjectStore
+    public partial class Database
     {
-        public class Migrations<TObjectStore>
-            where TObjectStore : IObjectStore
+        public class Migrations<TDatabase>
+            where TDatabase : IDatabase
         {
             public class Pair
             {
@@ -15,11 +15,11 @@ namespace JasonPereira84.AppSettings
             }
 
             public String Path { get; set; }
-            public TObjectStore ObjectStore { get; set; }
-            public String JournalObjectName { get; set; }
+            public TDatabase Database { get; set; }
+            public String JournalTableName { get; set; }
             public Dictionary<String, Pair> Variables { get; set; }
         }
 
-        public class Migrations : Migrations<ObjectStore> { }
+        public class Migrations : Migrations<Database> { }
     }
 }
